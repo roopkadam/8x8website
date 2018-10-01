@@ -1,0 +1,45 @@
+/*  ------------------------------------------------------
+  ribbon section
+  ------------------------------------------------------*/
+  .ribbon-wrap{
+    top: 0;
+    background: #131313;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+		z-index:1;
+		 p{
+				font-size: 16px;
+			margin: 0;
+			color: white;
+			display: inline-block;
+		}
+		.cta{
+			    margin-left: 15px;
+			    padding: 5px 20px;
+			    font-size: 14px;
+			    color: #fff;
+			    margin-top: -3px;
+			    border: 1px solid #fff;
+			    font-weight: 400;
+			    box-shadow: none;
+			    border-radius: 4px;
+			    text-transform: uppercase;
+					display: inline-block;
+					&:hover{
+						text-decoration: none;
+      			color: white;
+					}
+				}
+		.icon-cancel{
+			position: absolute;
+			right: 15px;
+			top: 20px;
+			font-size: 15px;
+			color: rgba(255,255,255,.5);
+			cursor: pointer;
+		} 
+  }
+
+
+    

@@ -2,8 +2,9 @@
 $(document).ready(function(){
 	$('#close').click(function(){
 		$('.ribbon-wrap').remove();
-					$('.page-header').css('top','0px');
-					$('.banner-img').css('margin-top','0px');
+					$('.page-header').css('margin-top','0px');
+					$('.page-container').css('margin-top','12px');
+
 					// $('.navbar').removeClass('custom-margin');
 	});
 });

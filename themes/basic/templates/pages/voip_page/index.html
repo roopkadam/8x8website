@@ -1,0 +1,159 @@
+{% extends "layouts/default.html" %}
+
+{% block content %}
+<body>
+    <!-- main page wrapper -->
+    <div class="main-wrapper">
+        <!-- page container div -->
+        <div class="page-container">
+            <!-- 8x8 page heder section -->
+            <div class="row page-header">
+                <div class="col-sm-6 text-center website-logo-div1">
+                    <img class="logo-8x8" src="{{getAssetUrl(entry.header.logo_section.logo)}}" alt="8x8 logo">
+                </div>
+                <div class="col-sm-6 text-center website-logo-div2">
+                    <h2>
+							<strong>{{entry.header.contact_section.title}}</strong>
+						</h2>
+              <h2>
+								<a href="#" class="phone-number">
+									<img class="call-icon" src="{{getAssetUrl(entry.header.contact_section.call_logo)}}" alt="8x8 logo">
+									<strong>{{entry.header.contact_section.phone_number}}</strong>
+								</a>
+						</h2>
+                </div>
+            </div>
+            <div class="from-wrapper-img" style="background-image:url({{getAssetUrl(entry.banner_section.background_image)}});">
+              <!-- form section insideof the page container -->
+              <div class="container">
+                  <div class="form-wrapper">
+                      <div class="row">
+                          <div class="col-lg-6" style="background-color:#f1f3f4;">
+                              <!-- heading -->
+                              <div class="form-left-col">
+                                  <p class="col-heading"><strong>{{entry.banner_section.title}}</strong>
+                                  </p>
+                              </div>
+                              <!-- description -->
+                              <div class="col-description">
+                                  <p>{{entry.banner_section.desc}}</p>
+                              </div>
+                              <div class="company-logo-div">
+                                  <img class="company-logo" src="{{getAssetUrl(entry.banner_section.awards_image)}}" alt="companylogo">
+                              </div>
+                          </div>
+                          <div class="col-lg-6" style="background-color:#f1f3f4;">
+                              <!-- form -->
+                              <form class="login-form">
+                                  <div class="form-row">
+                                      <div class="form-group col-md-6">
+                                          <label for="inputEmail4">*FIRST NAME</label>
+                                          <input type="text" class="form-control" id="inputEmail4" placeholder="" required="required">
+                                      </div>
+                                      <div class="form-group col-md-6">
+                                          <label for="inputEmail4">*LATST NAME</label>
+                                          <input type="text" class="form-control" id="inputEmail4" placeholder="" required="required">
+                                      </div>
+                                  </div>
+                                  <div class="form-row">
+                                      <div class="form-group col-md-6">
+                                          <label for="inputEmail4">*COMPANY</label>
+                                          <input type="text" class="form-control" id="inputEmail4" placeholder="" required="required">
+                                      </div>
+                                      <div class="form-group col-md-6">
+                                          <label for="inputEmail4">*EMAIL</label>
+                                          <input type="email" class="form-control" id="inputEmail4" placeholder="" required="required">
+                                      </div>
+                                  </div>
+                                  <div class="form-row">
+                                      <div class="form-group col-md-6">
+                                          <label for="inputEmail4">*PHONE</label>
+                                          <input type="text" class="form-control" id="inputEmail4" placeholder="" required="required">
+                                      </div>
+                                      <div class="form-group col-md-4">
+                                          <label for="inputState">*COUNTRY</label>
+
+                                          <select id="inputState" class="form-control" required>
+                                              <option selected>Choose...</option>
+                                              <option>...</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="form-row">
+                                      <div class="form-group col-md-4">
+                                          <label for="inputState">*# OF EMPLOYEES</label>
+                                          <select id="inputState" class="form-control" required>
+                                              <option selected>Select...</option>
+                                              <option>2,500+</option>
+                                              <option>1000-2,499</option>
+                                              <option>251-999</option>
+                                              <option>1000-999</option>
+                                              <option>100-250</option>
+                                              <option>50-99</option>
+                                              <option>10-49</option>
+                                              <option>1-9</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="form-row ">
+                                      <button type="submit" class="btn quote-button">{{entry.banner_section.cta.title}}</button>
+                                  </div>
+                                  <div class="form-row text-center">
+                                      <a class="privacy-link" href="#">{{entry.banner_section.privacy_policy_link.title}}</a>
+                                  </div>
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </div><!-- page-container div close -->
+
+        <!-- media object section  -->
+        <div class="container media-object-sec">
+					<!-- first media row -->
+				
+						<div class="row first_media_row">
+								{% for content in entry.feature_section.features %}
+							<div class="col-md-6">
+								<div class="media">
+										<img src="{{getAssetUrl(content.image)}}" alt="John Doe" class="thumbnail-media">
+									</div>
+										<div class="media ">
+										<div class="media-body">
+											<p class="media-obj-heading"><strong>{{content.title}}</strong></p>
+											<p class="media-obj-content">{{content.desc}}</p>
+										</div>
+									</div>
+							</div>
+							{% endfor %}
+						</div>
+
+          <div class="row media_quote_btn_row">
+            <button type="submit" class="btn media-quote-button">{{entry.feature_section.cta.title}}</button>
+          </div>
+        </div>
+		</div><!-- main-wrapper div close -->
+		
+    <!-- communication section -->
+        <div class="communication_setion">
+          <div class="container communication_sec_content text-center">
+            <h1>{{entry.communicate_section.title}}</h1>
+            <div class="row">
+              <div class="col">
+                <img class="" src="{{getAssetUrl(entry.communicate_section.image)}}" alt="communication Image">
+              </div>
+              <div class="col communication_sec_description">
+                <h5>{{entry.communicate_section.sub_title}}</h5>
+                <p>{{entry.communicate_section.desc}}</p>
+              </div>
+            </div>
+             <!-- communicationsection button -->
+            <div class="row media_quote_btn_row">
+                <button type="submit" class="btn media-quote-button">{{entry.communicate_section.cta.title}}</button>
+              </div>
+          </div>
+        </div>
+</body>
+{% endblock %}
+
